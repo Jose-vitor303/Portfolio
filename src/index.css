@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+
+:root{
+    --main-color: #101630;
+    --letter-color : #FFFFFF;
+    --button-color : #492CC2;
+    --hover-color: #59B4DF;
+    --side-button : #5196CF;;
+}
+
+/* Reset CSS */
+
+/* Definir uma margem e preenchimento padrão para todos os elementos */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* Corrigir exibição no IE8 e versões mais antigas */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav{
+    display: block;
+}
+
+/* Definir estilos de conteúdo "semântico" apropriados */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* Remover decoração padrão de links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Definir o estilo padrão para elementos de cabeçalho */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* Definir margem e preenchimento padrão para listas não ordenadas e ordenadas */
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Definir estilo padrão para elementos embutidos */
+img,
+embed,
+object,
+iframe {
+    vertical-align: bottom;
+}
+
+/* Limpar formatação de botões */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Definir estilo padrão para inputs de formulário */
+input,
+textarea,
+select,
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Definir estilo padrão para elementos de formulário */
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* Evitar problemas de dimensionamento com bordas e preenchimento */
+}
+
+
+*{
+    margin : 0;
+    padding : 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-color);
+    color: var(--letter-color);
+    font-weight: 500;
+    font-size: 18px;
+    width: 100%;
+    display : flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+}
+
+
+
