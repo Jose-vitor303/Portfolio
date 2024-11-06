@@ -9,7 +9,6 @@
     
 }
 
-
 .content-fixed{
     position: fixed;
     color: #101630;
@@ -258,8 +257,8 @@
     }
 
     .content-project{
-        width: 50%;
-        text-align: left;
+        width: 60%;
+        /* text-align: left; */
     }
 
     .content-about-text{
@@ -275,11 +274,16 @@
         width: 25%;
     }
 
-    .content-portfolio-projects{
+    .flex{
         display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .content-portfolio{
+        flex-direction: column;
+    }
+
+    .content-portfolio-projects{
         width: 100%;
         margin-top: 4rem;
         margin-bottom: 3rem;

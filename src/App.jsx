@@ -1,9 +1,14 @@
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
+import { BiLogoPostgresql } from "react-icons/bi";
 import { IoLogoJavascript, IoLogoCss3 } from 'react-icons/io';
-import { FaReact, FaJava, FaHtml5 } from 'react-icons/fa'
-import { SiSpring, SiJunit5, SiJest } from 'react-icons/si'
+import { FaReact, FaHtml5, FaNodeJs } from 'react-icons/fa'
+import { SiMongodb} from 'react-icons/si'
+import { FaYoutube } from "react-icons/fa6";
+
+
 import Header from "./components/header/Header.jsx";
-import books from "./assets/susan-q-yin-2JIvboGLeho-unsplash.jpg"
+import Api from "./assets/a-photo-of-a-whiteboard-with-the-text-api-applicat-FPkUTH6-TOmhjQB7qqMoAQ-LYhlHTPmT6K9Aux5Li3P2A.jpeg"
+import Database from "./assets/a-photo-of-a-server-room-with-multiple-racks-of-se--qs-hiBrQT2brdmbc4gA6w-GDcbuwINQ_udsUzxbco_sA.jpeg"
 import "./App.css"
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -39,7 +44,6 @@ function App() {
             subject : subject,
             message : message,
         }
-
      
         const res = await fetch(`${baseUrl}/email/sendEmail`, {
             method: "POST",
@@ -49,7 +53,7 @@ function App() {
               "Content-Type": "application/json",
             },
           })
-
+          console.log(res);
         if (res.status > 199 && res.status < 300) {
             setResponse(true)
             setEmail("")
@@ -75,13 +79,18 @@ function App() {
             
                 <ul className="content-social-media">
                     <li>
-                        <Link to="https://github.com/Jose-vitor303">
+                        <Link to="https://github.com/Jose-silvaa">
                             <AiFillGithub className="experience-logo"/>
                         </Link>
                     </li>
                     <li>
                         <Link to="https://www.linkedin.com/in/jose-vitor-facanha/">
                             <AiFillLinkedin className="experience-logo"/>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="https://www.youtube.com/@ssilvadev">
+                            <FaYoutube className="experience-logo"/>
                         </Link>
                     </li>
                 </ul>
@@ -102,18 +111,33 @@ function App() {
         </section>
         <section className="content-portfolio">
             <h4>PORTFOLIO</h4>
-            <div className="content-portfolio-projects">
-                <div className="content-project">
-                    <h3>PROJECT LIBRARY</h3>
-                    <p>The purpose of this project was to simulate the operation of a library. Through this project, it was made possible to insert data into the database, such as information about authors, books, and readers. The development of this application involved the use of various technologies, including JavaFX, PostgreSQL, Hibernate, JUnit, and Maven.</p>
-                    <span><Link to="https://github.com/Jose-vitor303/bibliotecas">See the Code</Link></span>
+            <div className="flex">
+                <div className="content-portfolio-projects">
+                    <div className="content-project">
+                        <h3>NODE API</h3>
+                        <p>This project is an API built using NodeJS, MongoDB as the database, and JWT for authentication control.</p>
+                        <span><Link to="https://github.com/Jose-silvaa/node-api">See the Code</Link></span>
+                    </div>
+                    <div className="container-image">
+                        <Link to="https://github.com/Jose-silvaa/node-api">
+                            <img className="image" src={Api} alt="foto"/>
+                        </Link>
+                    </div>
                 </div>
-                <div className="container-image">
-                    <Link to="https://github.com/Jose-vitor303/bibliotecas">
-                        <img className="image" src={books} alt="foto"/>
-                    </Link>
+                <div className="content-portfolio-projects">
+                    <div className="content-project">
+                        <h3>DATABASE CLI TOOL</h3>
+                        <p>This project involves creating a command-line interface (CLI) tool to perform a full backup of a database.</p>
+                        <span><Link to="https://github.com/Jose-silvaa/database-cli-tool">See the Code</Link></span>
+                    </div>
+                    <div className="container-image">
+                        <Link to="https://github.com/Jose-silvaa/database-cli-tool">
+                            <img className="image" src={Database} alt="database"/>
+                        </Link>
+                    </div>
                 </div>
             </div>
+         
         </section>
         <section className="content-experience-title">
             <h4>EXPERIENCE</h4>
@@ -135,20 +159,16 @@ function App() {
                     <span>React.JS</span>
                 </div>
                 <div className="experience">
-                    <SiJest className="experience-logo"/>
-                    <span>Jest</span>
+                    <FaNodeJs className="experience-logo"/>
+                    <span>NodeJS</span>
                 </div>
                 <div className="experience">
-                    <FaJava className="experience-logo"/>
-                    <span>Java</span>
+                    <SiMongodb className="experience-logo"/>
+                    <span>MongoDB</span>
                 </div>
                 <div className="experience">
-                    <SiSpring className="experience-logo"/>
-                    <span>Spring</span>
-                </div>
-                <div className="experience">
-                    <SiJunit5 className="experience-logo"/>
-                    <span>Junit</span>
+                    <BiLogoPostgresql className="experience-logo"/>
+                    <span>PostgreSQL</span>
                 </div>
             </section>
           
@@ -158,12 +178,12 @@ function App() {
                 <h3>Drop Me a Message</h3>
                 <p>Hi, If you are a recruiter or potential collaborator interested in discussing opportunities, I would love to hear from you!</p>
                 <ul>
-                    <li>jvitorfacanha@Outlook.com</li>
+                    <li>jvitorfacanha@gmail.com</li>
                     <li>Macaé, Rio de Janeiro, Brazil</li>
                 </ul>
 
             </section>
-            <section className="footer-form" id="contact">
+            {/* <section className="footer-form" id="contact">
                 <form className="footer-contact">
 
                     <input onChange={(e)=> setEmail(e.target.value)} type="email" id="email" name="email" placeholder="Your email" required/>
@@ -172,7 +192,7 @@ function App() {
 
                     <button onClick={(event)=>sendEmail(event)} type="submit">Send</button>
                 </form>
-            </section>
+            </section> */}
         </footer>
     </>
   )
